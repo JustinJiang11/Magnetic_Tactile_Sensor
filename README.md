@@ -1,20 +1,36 @@
-# Tactile Sensor Repository (minghui/dev)
+# Tactile Sensor Repository
 
 ## Overview
-Here is the explanation of the pipeline and scripts for how to calibrate the magnetic tactile sensor by Minghui Jiang.
+This repository contains the code, firmware, datasets, and documentation for a custom magnetic tactile sensor designed for robotic dexterous manipulation. It provides tools for sensor calibration and synchronized data collection, model training and evaluation, real-time inference, and visualization utilities to map raw magnetic readings to contact force estimates.
 
 ### Project Goal
-Convert raw tactile readings into 3D force predictions.
+Provide a complete, reliable pipeline that converts raw magnetic field measurements into accurate 3D force predictions for real-time tactile feedback in robotic hands, enabling force-aware manipulation and improved interaction performance.
 
 ### Repository Structure
 - `calibration.py` is the calibration script. 
 - `train.py` is for training the MLP. data.zip is the train data collected by Minghui. 
-- `model.pth` is trained with this data and saved in `/model`. 
-- `scaler.pkl` is the saved feature normalizer from training. 
+- `model/model.pth` is trained with this data and saved in `/model`. 
+- `model/scaler.pkl` is the saved feature normalizer from training. 
 - `tactile_force_predict.py` is the output script using the model to give 3D force predictions.
+- `Arduino/sensor/sensor.ino` is the arduino communication script to read raw data from the magnetometers.
+- `Arduino/sensor_mux/sensor_mux.ino` is the arduino communication script to read multiple tactile sensors simultaneously with a multiplxer.
+- `visual_2d` is visualization script to see the magnitude and direction of predicted 3D forces.
+- `circuits/` includes the circuit designs and materials for PCB.
+- `parts/` includes the mold designs for the silicone layer.
 
 ## Pipeline
 Calibrate the tactile sensor with a xArm7 robot arm, collect tactile and ft sensor data in calibration, then train a MLP to predict 3D force values with tactile data as input.
+
+### 0. Installation
+1. Clone this repository:
+```bash
+git clone https://github.com/JustinJiang11/Magnetic_Tactile_Sensor.git
+```
+
+2. Install the package (editable mode):
+```bash
+pip install -e .
+```
 
 ### 1. Data Collection
 Run `calibration.py` to collect synchronized tactile and force-torque (FT) data.
