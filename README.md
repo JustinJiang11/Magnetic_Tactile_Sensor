@@ -3,6 +3,12 @@
 ## Overview
 This repository contains the code, firmware, datasets, and documentation for a custom magnetic tactile sensor designed for robotic dexterous manipulation. It provides tools for sensor calibration and synchronized data collection, model training and evaluation, real-time inference, and visualization utilities to map raw magnetic readings to contact force estimates.
 
+<p align="center">
+	<img src="visualization/tactile_sensor.jpg" alt="Tactile sensor overview" width="700"/>
+</p>
+
+*The magnetic tactile sensor.*
+
 ### Project Goal
 Provide a complete, reliable pipeline that converts raw magnetic field measurements into accurate 3D force predictions for real-time tactile feedback in robotic hands, enabling force-aware manipulation and improved interaction performance.
 
