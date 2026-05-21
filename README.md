@@ -1,7 +1,7 @@
 # Tactile Sensor Repository
 
-## Paper
-[Accessible paper PDF](An_Accessible__Elastomer_Based_Magnetic_Tactile_Sensor_for_Robotic_Fingertips.pdf)
+## Project Paper
+[Technical report and full project details in this PDF](An_Accessible__Elastomer_Based_Magnetic_Tactile_Sensor_for_Robotic_Fingertips.pdf)
 
 ## Overview
 This repository contains the code, firmware, datasets, and documentation for a custom magnetic tactile sensor designed for robotic dexterous manipulation. It provides tools for sensor calibration and synchronized data collection, model training and evaluation, real-time inference, and visualization utilities to map raw magnetic readings to contact force estimates.
